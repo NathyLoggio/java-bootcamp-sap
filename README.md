@@ -3,7 +3,7 @@
 A repository tracking my 90-day Java bootcamp progress, focusing on core Java, data structures, and best practices. 
 
 ## 🛠 Technologies
-- **Language:** Java 17 (or your version)
+- **Language:** Java 21
 - **IDE:** IntelliJ IDEA
 - **Version Control:** Git & GitHub
 
