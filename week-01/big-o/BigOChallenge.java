@@ -66,7 +66,7 @@ public class BigOChallenge {
         printBigOStudyGuide();
     }
 
-    private static long measureGets(Map<String, BigDecimal> invoicesByNumber, String targetInvoice) {
+    private static long measureGets(Map<String, BigDecimal> invoicesByNumber, String targetInvoice) {   
         long startTime = System.nanoTime();
         BigDecimal checksum = BigDecimal.ZERO;
 
