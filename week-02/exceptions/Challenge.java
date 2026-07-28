@@ -5,56 +5,40 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Objective: Combine custom exceptions in a realistic account-transfer workflow.
+ * My Objective: Combine multiple custom exceptions in a realistic account-transfer workflow 
+ * to build a resilient and safe banking service.
  *
- * Difficulty: Advanced
+ * Concepts I am exploring:
+ * - Structuring custom checked and unchecked exceptions
+ * - Centralized exception handling
+ * - Separating infrastructure failures from business failures
  *
- * Business scenario:
- * A banking service must create accounts and transfer money between them safely.
- *
- * SAP enterprise scenario:
- * Enterprise financial applications separate infrastructure failures from business failures.
- * Business-specific exception names improve logs, support tickets, and API contracts.
- *
- * Step-by-step explanation:
- * 1. BankService stores accounts in a HashMap by account number.
- * 2. createAccount() rejects duplicate IDs.
- * 3. transfer() validates source and target accounts.
- * 4. Business exceptions propagate to main(), where they are handled centrally.
- *
- * Expected console output:
+ * Expected output:
  * Transfer failed: Account ACC-9999 was not found.
  * Closing audit resources.
  * Alice balance: 500.00
  *
- * Time complexity:
- * - find account in HashMap: average O(1)
+ * My step-by-step logic:
+ * 1. I use BankService to store accounts in a HashMap by account number.
+ * 2. The createAccount() method validates and rejects duplicate IDs to maintain integrity.
+ * 3. The transfer() method strictly validates both source and target accounts before touching balances.
+ * 4. I let business exceptions propagate up to main(), where they are caught and handled centrally.
+ *
+ * Big-O Complexity (My notes):
+ * - Finding an account in the HashMap: average O(1)
  * - transfer(): average O(1)
  *
- * Common beginner mistakes:
- * - Throwing generic Exception.
- * - Hiding the original business reason.
- * - Mixing console printing inside domain logic.
- *
- * Possible interview questions:
- * - Why create AccountNotFoundException instead of using null?
- * - Why does DuplicateAccountException improve maintainability?
- * - How would Spring Boot convert these exceptions into HTTP responses?
- *
- * Suggested improvements:
- * - Add transaction rollback behavior.
- * - Add logging with correlation IDs.
- * - Add tests for every failure path.
- *
- * Mentor question:
- * What would happen if transfer withdrew from the source before confirming the target exists?
+ * SAP enterprise use case:
+ * Enterprise financial applications must clearly separate business failures from technical errors. 
+ * Creating distinct, business-specific exception names drastically improves log readability, 
+ * support ticketing, and API contract clarity.
  */
 public class Challenge {
 
     /**
-     * Runs the custom exception transfer challenge.
+     * Runs my custom exception transfer challenge.
      *
-     * @param args command-line arguments, not used in this exercise
+     * @param args command-line arguments (not used in this exercise)
      */
     public static void main(String[] args) {
         BankService bankService = new BankService();

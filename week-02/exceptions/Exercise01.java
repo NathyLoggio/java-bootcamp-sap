@@ -3,53 +3,36 @@ package exceptions;
 import java.math.BigDecimal;
 
 /**
- * Objective: Use unchecked exceptions for programming and validation mistakes.
+ * My Objective: Use unchecked exceptions to handle programming and validation mistakes effectively.
  *
- * Difficulty: Beginner
+ * Concepts I am exploring:
+ * - Unchecked exceptions (RuntimeException)
+ * - Validating inputs before changing state (Fail-fast principle)
+ * - The role of the finally block
  *
- * Business scenario:
- * A deposit request must be rejected if the amount is zero, negative, or missing.
- *
- * SAP enterprise scenario:
- * Backend services validate incoming data before changing business state. Invalid requests
- * should fail early with clear messages.
- *
- * Step-by-step explanation:
- * 1. deposit() validates the amount.
- * 2. Invalid values throw InvalidTransactionException.
- * 3. main() catches the exception and prints a business-readable message.
- * 4. finally runs whether the operation succeeds or fails.
- *
- * Expected console output:
+ * Expected output:
  * Deposit failed: Deposit amount must be greater than zero.
  * Audit finished.
  *
- * Time complexity:
+ * My step-by-step logic:
+ * 1. I validate the amount inside the deposit() method before any state changes occur.
+ * 2. If the value is invalid, I throw a custom InvalidTransactionException (unchecked).
+ * 3. In main(), I catch the exception and print a business-readable message.
+ * 4. I use a finally block to ensure the audit runs regardless of whether the operation succeeds or fails.
+ *
+ * Big-O Complexity (My notes):
  * - deposit(): O(1)
  *
- * Common beginner mistakes:
- * - Catching Exception too broadly.
- * - Ignoring exceptions with an empty catch block.
- * - Using exceptions for normal successful control flow.
- *
- * Possible interview questions:
- * - When is RuntimeException appropriate?
- * - Why should validation happen before updating balance?
- * - What does finally guarantee?
- *
- * Suggested improvements:
- * - Add structured logging.
- * - Return an error response object in a future REST API.
- *
- * Mentor question:
- * What would happen if deposit updated the balance before validating the amount?
+ * SAP enterprise use case:
+ * Backend services must validate incoming data before modifying business state.
+ * Invalid requests should fail early with clear messages, which is exactly what I simulated here.
  */
 public class Exercise01 {
 
     /**
-     * Runs the unchecked exception validation example.
+     * Runs my unchecked exception validation example.
      *
-     * @param args command-line arguments, not used in this exercise
+     * @param args command-line arguments (not used in this exercise)
      */
     public static void main(String[] args) {
         Account account = new Account("ACC-3001");

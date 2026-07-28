@@ -3,53 +3,37 @@ package exceptions;
 import java.math.BigDecimal;
 
 /**
- * Objective: Use checked exceptions for recoverable business failures.
+ * My Objective: Use checked exceptions to model recoverable business failures, 
+ * forcing callers to handle specific scenarios.
  *
- * Difficulty: Intermediate
+ * Concepts I am exploring:
+ * - Checked exceptions (extending Exception)
+ * - The throws keyword and exception propagation
+ * - Graceful failure recovery without corrupting state
  *
- * Business scenario:
- * A withdrawal should fail gracefully when the account does not have enough money.
- *
- * SAP enterprise scenario:
- * Financial systems often use explicit business exceptions so service layers can convert them
- * into user-facing messages, workflow decisions, or integration responses.
- *
- * Step-by-step explanation:
- * 1. withdraw() declares throws InsufficientFundsException.
- * 2. The compiler forces callers to handle or propagate the checked exception.
- * 3. main() catches it and prints a clear message.
- * 4. The account balance remains unchanged after the failed withdrawal.
- *
- * Expected console output:
+ * Expected output:
  * Withdrawal failed: Account ACC-4001 has only 100.00 available.
  * Current balance: 100.00
  *
- * Time complexity:
+ * My step-by-step logic:
+ * 1. I declare the withdraw() method with 'throws InsufficientFundsException'.
+ * 2. This forces the compiler to ensure callers handle or propagate the checked exception.
+ * 3. In main(), I catch it and provide a clear, graceful error message.
+ * 4. I ensure the account balance remains completely unchanged after the failed withdrawal.
+ *
+ * Big-O Complexity (My notes):
  * - withdraw(): O(1)
  *
- * Common beginner mistakes:
- * - Making every exception checked.
- * - Swallowing checked exceptions without action.
- * - Losing useful context in the exception message.
- *
- * Possible interview questions:
- * - When should Exception be extended instead of RuntimeException?
- * - What does throws mean?
- * - How does exception propagation work?
- *
- * Suggested improvements:
- * - Include account number and requested amount as exception fields.
- * - Add a transaction record for failed attempts if audit requires it.
- *
- * Mentor question:
- * Why might insufficient funds be modeled as a checked exception in a banking workflow?
+ * SAP enterprise use case:
+ * Financial systems use explicit business exceptions so service layers can confidently convert them 
+ * into user-facing messages, workflow decisions, or API integration responses.
  */
 public class Exercise02 {
 
     /**
-     * Runs the checked exception withdrawal example.
+     * Runs my checked exception withdrawal example.
      *
-     * @param args command-line arguments, not used in this exercise
+     * @param args command-line arguments (not used in this exercise)
      */
     public static void main(String[] args) {
         Account account = new Account("ACC-4001", new BigDecimal("100.00"));
