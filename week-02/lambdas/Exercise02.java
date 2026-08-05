@@ -45,7 +45,6 @@ public class Exercise02 {
                 new Invoice("INV-3003", "Consulting Partner", new BigDecimal("5200.00")));
 
         BigDecimal approvalThreshold = new BigDecimal("5000.00");
-
         System.out.println("Invoices requiring approval:");
         invoices.stream()
                 .sorted(Comparator.comparing(Invoice::amount).reversed())
