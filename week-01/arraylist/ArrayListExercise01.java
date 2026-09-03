@@ -52,7 +52,6 @@ public class ArrayListExercise01 {
         invoices.add(new Invoice("INV-1001", "Office Supplies Ltd", new BigDecimal("120.50")));
         invoices.add(new Invoice("INV-1002", "Cloud Hosting SA", new BigDecimal("899.99")));
         invoices.add(new Invoice("INV-1003", "Logistics Partner", new BigDecimal("450.00")));
-
         Invoice firstInvoice = invoices.get(0);
         System.out.println("First invoice: " + firstInvoice.invoiceNumber() + " from " + firstInvoice.supplierName());
 
