@@ -1,99 +1,32 @@
-# Banking System (Java)
+# 🏦 Banking System (Java)
 
-A mini banking system developed in Java as a learning project.
+A mini banking system built as a personal learning project to consolidate Object-Oriented Programming (OOP), clean code principles, and enterprise Java architecture.
 
-The goal of this project is to practice Object-Oriented Programming (OOP), exception handling, collections, clean code principles, and software architecture commonly used in enterprise Java applications.🚀
+## 🚧 Status: Work in Progress (WIP)
+This repository follows an incremental development approach. I am currently building the **Domain Model layer**, so some services and integrations are still under active development.
 
-## Current Status
+## 🛠️ Technologies & Core Concepts
+- **Language:** Java
+- **Design:** OOP, Encapsulation, and Domain-Driven Design basics.
+- **Best Practices:** Defensive programming (`Objects.requireNonNull`), fail-fast validation, and strict use of `BigDecimal` for monetary accuracy.
+- **Error Handling:** Custom exception hierarchy to separate business rules from system failures.
 
-🚧 Work in Progress (WIP)
+## 🚀 Roadmap & Progress
+- [x] **Domain Models (Core):** Abstract Account, Transaction record, and Enums with strict state validation.
+- [ ] **Customer Model:** Identity data encapsulation.
+- [ ] **Custom Exceptions:** Implementation of domain-specific errors.
+- [ ] **Repository Layer:** Data persistence abstraction.
+- [ ] **Service Layer:** Orchestrating deposits, withdrawals, and transfers.
+- [ ] **Console Application:** User interaction menu.
+- [ ] **Unit Tests:** Ensuring business logic reliability.
 
-The project is under active development and is **not yet functional**. 
-Some compilation errors are expected because several classes and modules are still being implemented.
-
-## Features Implemented
-
-### Account (Abstract Class)
-
-Current implementation includes:
-
-- Account validation during creation
-- Account activation status
-- Deposit operation
-- Withdraw operation
-- Balance validation
-- Transaction history support
-- Immutable transaction list exposure
-- Account closing functionality
-- Custom validation methods
-- Use of `BigDecimal` for monetary values
-- Defensive programming using `Objects.requireNonNull()`
-
-## Planned Features
-
-- Customer model
-- Transaction model
-- Savings Account
-- Checking Account
-- Bank Repository
-- Bank Service
-- Money transfer between accounts
-- Account search
-- Custom exception hierarchy
-- Console menu
-- Unit tests
-
-## Progress
-
-- [x] Project structure
-- [x] Abstract Account model
-- [ ] Customer model
-- [ ] Transaction model
-- [ ] Custom exceptions
-- [ ] Repository layer
-- [ ] Service layer
-- [ ] Console application
-- [ ] Unit tests
-
-## Project Structure
-
-```
+## 📂 Project Structure
+```text
 project-banking-system/
-│
-├── exception/
-├── model/
-├── repository/
-├── service/
-├── util/
-├── Main.java
+├── exception/    # Custom business exceptions
+├── model/        # Domain entities (Account, Transaction, Customer)
+├── repository/   # Data storage interfaces and implementations
+├── service/      # Business logic orchestration
+├── util/         # Shared helpers
+├── Main.java     # Application entry point
 └── README.md
-```
-
-## Technologies
-
-- Java
-- Object-Oriented Programming (OOP)
-- Collections Framework
-- BigDecimal
-- Exception Handling
-
-## Development Notes
-
-This repository follows an incremental development approach.
-Each layer is implemented separately:
-
-1. Model ✅
-2. Exceptions
-3. Repository
-4. Service
-5. Main Application
-
-Compilation errors may occur until all dependencies are implemented.
-
-## Author
-
-Nathaly Loggiovini 👩‍💻
-Developed as a personal Java learning project.
-
-## 📬 Contact
-- **LinkedIn:** [Nathaly Loggiovini] (https://linkedin.com/in/nathaly-loggiovini-b5a160220)
